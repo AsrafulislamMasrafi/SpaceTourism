@@ -173,7 +173,7 @@ main {
       a {
         background-color: $clr-white;
         color: black;
-        padding: 0 max(3rem, 7vw);
+        padding: 0 max(3rem, 4vw);
         font-size: var(--fs-600);
         border-radius: 50%;
         display: inline-grid;
@@ -188,7 +188,7 @@ main {
           border-radius: 50%;
           opacity: 0;
           transition: 0.5s;
-          background-color: rgba(255, 255, 255, 0.336);
+          background-color: rgba(255, 255, 255, 0.123);
           z-index: -1;
         }
         &:hover::after,
