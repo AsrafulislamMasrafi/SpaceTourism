@@ -1,0 +1,40 @@
+// @import "./variable";
+body {
+  background: $color-Bg;
+  background-image: url(../assets/home/background-home-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: calc(50% - 0px) calc(50% - 0px);
+}
+/* Media Query for Mobile Devices */
+@media (max-width: 580px) {
+  body {
+    background-image: url(../assets/home/background-home-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom center;
+  }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 581px) and (max-width: 880px) {
+  body {
+    background-image: url(../assets/home/background-home-tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+  }
+}
+
+// /* Media Query for Tablets Ipads portrait mode */
+// @media (min-width: 768px) and (max-width: 1024px) {
+//   body {
+//     background-image: url(../assets/home/background-home-tablet.jpg);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-attachment: fixed;
+//   }
+// }
