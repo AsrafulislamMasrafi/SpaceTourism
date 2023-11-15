@@ -52,3 +52,76 @@ $lineHeight: 1.5;
     // explore button
   }
 }
+
+// font
+$font-heading: "Bellefair", serif;
+$font-heading-5: "Barlow Condensed", sans-serif;
+$font-paragraph: "Barlow", sans-serif;
+@mixin font {
+  font-family: $font-heading-5;
+  font-weight: 400;
+}
+
+.heading {
+  font-family: $font-heading;
+  font-size: var(--fs-900);
+  font-weight: 400;
+  line-height: $lineHeight;
+  animation: hanime 0.5s linear;
+}
+
+.Heading-5 {
+  font-size: var(--fs-500);
+  font-family: $font-heading-5;
+  letter-spacing: $letter-spacing-1;
+  color: $clr-light;
+  animation: h5anime 0.5s linear;
+}
+
+.paragraph-1 {
+  font-size: var(--fs-400);
+  font-family: $font-paragraph;
+  animation: h1anime 0.5s linear;
+}
+
+@keyframes h1anime {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes hanime {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes h5anime {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@mixin navText {
+  font-size: var(--fs-400);
+  @include font;
+  letter-spacing: $letter-spacing-2;
+}
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
