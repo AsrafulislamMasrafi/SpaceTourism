@@ -43,7 +43,9 @@ body {
   // line-height: 1.5;
   display: grid;
   grid-template-rows: max-content 1fr;
-  overflow-x: hidden; ;
+  overflow-x: hidden;
+  font-family: $font-paragraph;
+  font-weight: 400;
 }
 
 /* A elements that don't have a class get default styles */

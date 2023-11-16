@@ -1,7 +1,7 @@
 :root {
   --fs-900: 9.375rem;
-  --fs-800: 6.25rem;
-  --fs-700: 3.5rem;
+  --fs-800: clamp(4rem, 6vw, 6.25rem);
+  --fs-700: clamp(2rem, 4vw, 3.5rem);
   --fs-600: clamp(1.25rem, 4vw, 2rem);
   --fs-500: clamp(1rem, 3vw, 1.75rem);
   --fs-400: 1.125rem;
@@ -41,21 +41,55 @@
   font-size: var(--fs-900);
   font-weight: 400;
   line-height: 1.5;
-  animation: hanime 0.5s linear;
+  animation: h1anime 0.5s linear;
 }
 
-.Heading-5 {
+.h2 {
+  font-family: "Bellefair", serif;
+  font-size: var(--fs-800);
+  font-weight: 400;
+  line-height: 1.5;
+  animation: h1anime 0.5s linear;
+}
+
+.h5 {
   font-size: var(--fs-500);
   font-family: "Barlow Condensed", sans-serif;
   letter-spacing: 4.75px;
   color: hsl(231, 77%, 90%);
   animation: h5anime 0.5s linear;
+  font-weight: 400;
 }
 
-.paragraph-1 {
+.text {
   font-size: var(--fs-400);
   font-family: "Barlow", sans-serif;
+  line-height: 1.5;
   animation: h1anime 0.5s linear;
+}
+
+.head4 {
+  font-size: var(--fs-600);
+  font-family: "Bellefair", serif;
+  line-height: 1.5;
+  animation: h1anime 0.5s linear;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: hsl(231, 77%, 90%);
+}
+
+.head3 {
+  font-size: var(--fs-700);
+  font-family: "Bellefair", serif;
+  line-height: 1.5;
+  animation: h1anime 0.5s linear;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.number {
+  font-weight: bold;
+  color: #636262;
 }
 
 @keyframes h1anime {
@@ -68,7 +102,7 @@
     opacity: 1;
   }
 }
-@keyframes hanime {
+@keyframes h1anime {
   0% {
     transform: scale(0);
     opacity: 0;
@@ -88,6 +122,11 @@
     opacity: 1;
   }
 }
+.grid {
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
+}
+
 /* ------------------- */
 /* Reset               */
 /* ------------------- */
@@ -133,6 +172,8 @@ body {
   display: grid;
   grid-template-rows: max-content 1fr;
   overflow-x: hidden;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
 }
 
 /* A elements that don't have a class get default styles */
@@ -232,7 +273,7 @@ header::after {
   height: 1px;
   width: 100%;
   order: 1;
-  background: #fff;
+  background: rgba(172, 172, 172, 0.767);
   margin-right: -3rem;
   z-index: 100;
 }
@@ -274,7 +315,7 @@ header nav ul li:hover::after, header nav ul li:focus::after {
   position: absolute;
   bottom: -2rem;
   left: 0;
-  animation: navAnime 200ms;
+  animation: navAnime 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 header nav ul li a {
   display: flex;
@@ -451,6 +492,259 @@ main section:nth-child(2) .button a:hover::after, main section:nth-child(2) .but
     grid-column: 1/-1;
   }
 }
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 3rem;
+}
+.mainContainer .mainHeading {
+  width: 80vw;
+  margin: auto;
+}
+@media (max-width: 580.99px) {
+  .mainContainer .mainHeading {
+    text-align: center;
+  }
+}
+.mainContainer .mainContent {
+  min-height: 80vh;
+  place-content: center;
+  -moz-column-gap: clamp(4rem, 5vw, 9rem);
+       column-gap: clamp(4rem, 5vw, 9rem);
+}
+.mainContainer .mainContent .sectionDestination:nth-child(1) {
+  grid-column: 2/3;
+  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 580.99px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(1) {
+    grid-column: 2/-2;
+    row-gap: 5rem;
+  }
+}
+@media (min-width: 581px) and (max-width: 881px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(1) {
+    grid-column: 2/-2;
+    row-gap: 5rem;
+  }
+}
+.mainContainer .mainContent .sectionDestination:nth-child(1) img {
+  width: 100%;
+  margin: auto;
+}
+@media (max-width: 580.99px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(1) img {
+    margin: auto;
+    row-gap: 5rem;
+    width: 60%;
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 581px) and (max-width: 881px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(1) img {
+    margin: auto;
+    row-gap: 5rem;
+    width: 50%;
+    margin-bottom: 2rem;
+  }
+}
+.mainContainer .mainContent .sectionDestination:nth-child(2) {
+  line-height: 1.5;
+  grid-column: 3/4;
+}
+@media (max-width: 580.99px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(2) {
+    grid-column: 2/-2;
+    row-gap: 5rem;
+  }
+}
+@media (min-width: 581px) and (max-width: 881px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(2) {
+    grid-column: 2/-2;
+    row-gap: 5rem;
+  }
+}
+.mainContainer .mainContent .sectionDestination:nth-child(2) ul {
+  padding: 1rem 0rem;
+  display: flex;
+  gap: 1rem;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 2.35px;
+}
+@media (max-width: 580.99px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(2) ul {
+    justify-content: center;
+  }
+}
+@media (min-width: 581px) and (max-width: 881px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(2) ul {
+    justify-content: center;
+  }
+}
+.mainContainer .mainContent .sectionDestination:nth-child(2) ul li {
+  cursor: pointer;
+}
+.mainContainer .mainContent .sectionDestination:nth-child(2) ul li::after {
+  content: "";
+  display: block;
+  position: relative;
+  height: 3px;
+  width: 0%;
+  margin-top: 0.5rem;
+  transition: 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.mainContainer .mainContent .sectionDestination:nth-child(2) ul li:hover::after {
+  width: 100%;
+  background: rgba(146, 146, 146, 0.767);
+}
+.mainContainer .mainContent .sectionDestination:nth-child(2) ul .barActive::after {
+  content: "";
+  display: block;
+  position: relative;
+  height: 3px;
+  width: 100%;
+  background: rgba(255, 254, 254, 0.767);
+  margin-top: 0.5rem;
+}
+@media (max-width: 580.99px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(2) .content {
+    margin: auto;
+    text-align: center;
+  }
+}
+@media (min-width: 581px) and (max-width: 881px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(2) .content {
+    margin: auto;
+    text-align: center;
+  }
+}
+.mainContainer .mainContent .sectionDestination:nth-child(2) .content .hr::after {
+  content: "";
+  display: block;
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background: hsl(231, 77%, 90%);
+  margin-top: 2rem;
+}
+.mainContainer .mainContent .sectionDestination:nth-child(2) .content .info {
+  display: flex;
+  margin-top: 2rem;
+  gap: 25%;
+}
+@media (max-width: 580.99px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(2) .content .info {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media (min-width: 581px) and (max-width: 881px) {
+  .mainContainer .mainContent .sectionDestination:nth-child(2) .content .info {
+    justify-content: space-around;
+    gap: 0;
+  }
+}
+.mainContainer .mainContent .sectionDestination:nth-child(2) .content .info h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: var(--fs-200);
+  font-weight: 400;
+  letter-spacing: 2.35px;
+  line-height: 1.5;
+}
+.mainContainer .mainContent .sectionDestination:nth-child(2) .content .info p {
+  font-family: "Bellefair", serif;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.mainCrewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vw, 3rem);
+}
+.mainCrewContainer .mainHeading {
+  width: 80vw;
+  margin: auto;
+}
+@media (max-width: 580.99px) {
+  .mainCrewContainer .mainHeading {
+    text-align: center;
+  }
+}
+.mainCrewContainer .mainContent {
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(1rem, 1fr);
+  place-content: center;
+  gap: clamp(4rem, 5vw, 9rem);
+}
+.mainCrewContainer .mainContent .sectionCrew:nth-child(1) {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+  justify-content: center;
+}
+@media (max-width: 580.99px) {
+  .mainCrewContainer .mainContent .sectionCrew:nth-child(1) {
+    grid-column: 2/-2;
+    row-gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (min-width: 581px) and (max-width: 881px) {
+  .mainCrewContainer .mainContent .sectionCrew:nth-child(1) {
+    grid-column: 2/-2;
+    row-gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+.mainCrewContainer .mainContent .sectionCrew:nth-child(1) .dot {
+  display: flex;
+  gap: 1rem;
+}
+.mainCrewContainer .mainContent .sectionCrew:nth-child(1) .dot .active {
+  background: #fff;
+}
+.mainCrewContainer .mainContent .sectionCrew:nth-child(1) .dot li {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #41444c;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.mainCrewContainer .mainContent .sectionCrew:nth-child(1) .dot li:hover {
+  background: #86878c;
+}
+.mainCrewContainer .mainContent .sectionCrew:nth-child(2) {
+  line-height: 1.5;
+  grid-column: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.mainCrewContainer .mainContent .sectionCrew:nth-child(2) div {
+  margin: auto;
+}
+@media (max-width: 580.99px) {
+  .mainCrewContainer .mainContent .sectionCrew:nth-child(2) {
+    grid-column: 2/-2;
+  }
+}
+@media (min-width: 581px) and (max-width: 881px) {
+  .mainCrewContainer .mainContent .sectionCrew:nth-child(2) {
+    grid-column: 2/-2;
+  }
+}
+
 *,
 *::after,
 *::before {

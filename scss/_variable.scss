@@ -7,8 +7,8 @@ $clr-white: hsl(0 0% 100%);
 // --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
 :root {
   --fs-900: 9.375rem;
-  --fs-800: 6.25rem; // TODO add clamp
-  --fs-700: 3.5rem; // TODO add clamp
+  --fs-800: clamp(4rem, 6vw, 6.25rem); // TODO add clamp
+  --fs-700: clamp(2rem, 4vw, 3.5rem);
   --fs-600: clamp(1.25rem, 4vw, 2rem);
   --fs-500: clamp(1rem, 3vw, 1.75rem);
   --fs-400: 1.125rem;
@@ -55,10 +55,11 @@ $lineHeight: 1.5;
 
 // font
 $font-heading: "Bellefair", serif;
-$font-heading-5: "Barlow Condensed", sans-serif;
+$font-h5: "Barlow Condensed", sans-serif;
 $font-paragraph: "Barlow", sans-serif;
+
 @mixin font {
-  font-family: $font-heading-5;
+  font-family: $font-h5;
   font-weight: 400;
 }
 
@@ -67,23 +68,52 @@ $font-paragraph: "Barlow", sans-serif;
   font-size: var(--fs-900);
   font-weight: 400;
   line-height: $lineHeight;
-  animation: hanime 0.5s linear;
+  animation: h1anime 0.5s linear;
 }
-
-.Heading-5 {
-  font-size: var(--fs-500);
-  font-family: $font-heading-5;
-  letter-spacing: $letter-spacing-1;
-  color: $clr-light;
-  animation: h5anime 0.5s linear;
-}
-
-.paragraph-1 {
-  font-size: var(--fs-400);
-  font-family: $font-paragraph;
+.h2 {
+  font-family: $font-heading;
+  font-size: var(--fs-800);
+  font-weight: 400;
+  line-height: $lineHeight;
   animation: h1anime 0.5s linear;
 }
 
+.h5 {
+  font-size: var(--fs-500);
+  font-family: $font-h5;
+  letter-spacing: $letter-spacing-1;
+  color: $clr-light;
+  animation: h5anime 0.5s linear;
+  font-weight: 400;
+}
+
+.text {
+  font-size: var(--fs-400);
+  font-family: $font-paragraph;
+  line-height: $lineHeight;
+  animation: h1anime 0.5s linear;
+}
+.head4 {
+  font-size: var(--fs-600);
+  font-family: $font-heading;
+  line-height: $lineHeight;
+  animation: h1anime 0.5s linear;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $clr-light;
+}
+.head3 {
+  font-size: var(--fs-700);
+  font-family: $font-heading;
+  line-height: $lineHeight;
+  animation: h1anime 0.5s linear;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.number {
+  font-weight: bold;
+  color: #636262;
+}
 @keyframes h1anime {
   0% {
     transform: translateX(-100%);
@@ -94,7 +124,7 @@ $font-paragraph: "Barlow", sans-serif;
     opacity: 1;
   }
 }
-@keyframes hanime {
+@keyframes h1anime {
   0% {
     transform: scale(0);
     opacity: 0;
@@ -124,4 +154,24 @@ $font-paragraph: "Barlow", sans-serif;
   display: flex;
   justify-content: $justify;
   align-items: $align;
+}
+
+// grid layout
+.grid {
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    repeat(2, minmax(0, 30rem))
+    minmax(1rem, 1fr);
+}
+
+@mixin mobile() {
+  @media (max-width: 580.99px) {
+    @content;
+  }
+}
+@mixin tablet() {
+  @media (min-width: 581px) and (max-width: 881px) {
+    @content;
+  }
 }

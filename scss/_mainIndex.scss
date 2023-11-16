@@ -54,7 +54,6 @@ main {
     place-items: center;
     text-align: center;
     grid-template-columns: 1fr;
-    // place-content: space-between;
     row-gap: max(10vw, 2rem);
     section:nth-child(1) {
       grid-column: 1/-1;

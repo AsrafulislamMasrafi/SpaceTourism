@@ -1,0 +1,79 @@
+.mainCrewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vw, 3rem);
+  //   margin-bottom: 3rem;
+  .mainHeading {
+    width: 80vw;
+    margin: auto;
+    @include mobile {
+      text-align: center;
+    }
+  }
+  .mainContent {
+    display: grid;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      repeat(2, minmax(0, 40rem))
+      minmax(1rem, 1fr);
+    place-content: center;
+    gap: clamp(4rem, 5vw, 9rem);
+    .sectionCrew:nth-child(1) {
+      grid-column: 2/3;
+      @include mobile {
+        grid-column: 2/-2;
+        row-gap: 5rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      @include tablet {
+        grid-column: 2/-2;
+        row-gap: 5rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      display: flex;
+      flex-direction: column;
+      gap: 5vw;
+      justify-content: center;
+      .dot {
+        display: flex;
+        gap: 1rem;
+        .active {
+          background: #fff;
+        }
+        li {
+          width: 0.8rem;
+          height: 0.8rem;
+          background: #41444c;
+          border-radius: 50%;
+          cursor: pointer;
+          &:hover {
+            background: #86878c;
+          }
+        }
+      }
+    }
+    .sectionCrew:nth-child(2) {
+      line-height: $lineHeight;
+      grid-column: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      div {
+        margin: auto;
+      }
+      @include mobile {
+        grid-column: 2/-2;
+        // width: 100%;
+      }
+      @include tablet {
+        grid-column: 2/-2;
+        // width: 100%;
+      }
+    }
+  }
+}
