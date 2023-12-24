@@ -20,3 +20,5 @@ navList.forEach((li) => {
     li.classList.add("navActive");
   });
 });
+
+// write a function to add sum

@@ -7,13 +7,14 @@ $clr-white: hsl(0 0% 100%);
 // --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
 :root {
   --fs-900: 9.375rem;
-  --fs-800: clamp(4rem, 6vw, 6.25rem); // TODO add clamp
+  --fs-800: clamp(4rem, 6vw, 6.25rem);
+  --fs-80: clamp(4rem, 6vw, 6.25rem);
   --fs-700: clamp(2rem, 4vw, 3.5rem);
   --fs-600: clamp(1.25rem, 4vw, 2rem);
   --fs-500: clamp(1rem, 3vw, 1.75rem);
   --fs-400: 1.125rem;
   --fs-300: clamp(0.875rem, 1vw, 1rem);
-  --fs-200: 0.875rem; // TODO add clamp
+  --fs-200: 0.875rem;
   // explore button
   --logo: 3rem;
 }
@@ -32,6 +33,7 @@ $lineHeight: 1.5;
   :root {
     --fs-900: 5rem;
     --fs-800: 3.5rem;
+    --fs-80: 1.5rem;
     --fs-700: 1.5rem;
     --fs-600: 1rem;
     // --fs-500: 1.75rem;
@@ -46,6 +48,7 @@ $lineHeight: 1.5;
   :root {
     --fs-900: 9.375rem;
     --fs-800: 5rem;
+    --fs-80: 2.5rem;
     --fs-700: 2.5rem;
     --fs-600: 1.5rem;
     --fs-400: 1rem;
@@ -76,6 +79,14 @@ $font-paragraph: "Barlow", sans-serif;
   font-weight: 400;
   line-height: $lineHeight;
   animation: h1anime 0.5s linear;
+}
+.h22 {
+  font-family: $font-heading;
+  font-size: var(--fs-80);
+  font-weight: 400;
+  line-height: $lineHeight;
+  animation: h1anime 0.5s linear;
+  text-transform: uppercase;
 }
 
 .h5 {
@@ -156,12 +167,13 @@ $font-paragraph: "Barlow", sans-serif;
   align-items: $align;
 }
 
-// grid layout
-.grid {
+// TODO: change if to class needed. grid layout
+
+@mixin grid($width) {
   display: grid;
   grid-template-columns:
     minmax(1rem, 1fr)
-    repeat(2, minmax(0, 30rem))
+    repeat(2, minmax(0, $width))
     minmax(1rem, 1fr);
 }
 

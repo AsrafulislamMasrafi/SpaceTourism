@@ -1,12 +1,26 @@
 // @import "./variable";
 body {
   background: $color-Bg;
-  background-image: url(../assets/home/background-home-desktop.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: calc(50% - 0px) calc(50% - 0px);
 }
+.crew {
+  background-image: url(../assets/crew/background-crew-desktop.jpg);
+}
+.destination {
+  background-image: url(../assets/destination/background-destination-desktop.jpg);
+
+}
+.index {
+  background-image: url(../assets/home/background-home-desktop.jpg);
+}
+.technology {
+  background-image: url(../assets/technology/background-technology-desktop.jpg);
+
+}
+
 /* Media Query for Mobile Devices */
 @media (max-width: 580px) {
   body {
